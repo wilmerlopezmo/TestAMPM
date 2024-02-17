@@ -10,16 +10,9 @@
 namespace Entidades
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class Productos
+    public partial class GuardarProducto_Result
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Productos()
-        {
-            this.OpcionesProducto = new HashSet<OpcionesProducto>();
-        }
-    
         public int IdProducto { get; set; }
         public string CodigoProducto { get; set; }
         public string NombreProducto { get; set; }
@@ -28,8 +21,5 @@ namespace Entidades
         public string NombreProveedor { get; set; }
         public byte[] Imagen { get; set; }
         public Nullable<System.DateTime> FechaCreacion { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<OpcionesProducto> OpcionesProducto { get; set; }
     }
 }

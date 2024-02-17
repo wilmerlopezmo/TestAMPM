@@ -12,6 +12,8 @@ namespace Entidades
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class TESTAMPMEntities : DbContext
     {
@@ -28,5 +30,59 @@ namespace Entidades
         public virtual DbSet<OpcionesProducto> OpcionesProducto { get; set; }
         public virtual DbSet<Productos> Productos { get; set; }
         public virtual DbSet<Usuarios> Usuarios { get; set; }
+    
+        public virtual ObjectResult<GuardarProducto_Result> GuardarProducto(ObjectParameter idProducto, string codigoProducto, string nombreProducto, Nullable<decimal> existencia, string nombreProveedor, byte[] imagen)
+        {
+            var codigoProductoParameter = codigoProducto != null ?
+                new ObjectParameter("CodigoProducto", codigoProducto) :
+                new ObjectParameter("CodigoProducto", typeof(string));
+    
+            var nombreProductoParameter = nombreProducto != null ?
+                new ObjectParameter("NombreProducto", nombreProducto) :
+                new ObjectParameter("NombreProducto", typeof(string));
+    
+            var existenciaParameter = existencia.HasValue ?
+                new ObjectParameter("Existencia", existencia) :
+                new ObjectParameter("Existencia", typeof(decimal));
+    
+            var nombreProveedorParameter = nombreProveedor != null ?
+                new ObjectParameter("NombreProveedor", nombreProveedor) :
+                new ObjectParameter("NombreProveedor", typeof(string));
+    
+            var imagenParameter = imagen != null ?
+                new ObjectParameter("Imagen", imagen) :
+                new ObjectParameter("Imagen", typeof(byte[]));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GuardarProducto_Result>("GuardarProducto", idProducto, codigoProductoParameter, nombreProductoParameter, existenciaParameter, nombreProveedorParameter, imagenParameter);
+        }
+    
+        public virtual int GuardarUsuario(ObjectParameter id, string nombreUsuario, string pass, string nombre, string apellidos, string correo, string telefono)
+        {
+            var nombreUsuarioParameter = nombreUsuario != null ?
+                new ObjectParameter("NombreUsuario", nombreUsuario) :
+                new ObjectParameter("NombreUsuario", typeof(string));
+    
+            var passParameter = pass != null ?
+                new ObjectParameter("Pass", pass) :
+                new ObjectParameter("Pass", typeof(string));
+    
+            var nombreParameter = nombre != null ?
+                new ObjectParameter("Nombre", nombre) :
+                new ObjectParameter("Nombre", typeof(string));
+    
+            var apellidosParameter = apellidos != null ?
+                new ObjectParameter("Apellidos", apellidos) :
+                new ObjectParameter("Apellidos", typeof(string));
+    
+            var correoParameter = correo != null ?
+                new ObjectParameter("Correo", correo) :
+                new ObjectParameter("Correo", typeof(string));
+    
+            var telefonoParameter = telefono != null ?
+                new ObjectParameter("Telefono", telefono) :
+                new ObjectParameter("Telefono", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("GuardarUsuario", id, nombreUsuarioParameter, passParameter, nombreParameter, apellidosParameter, correoParameter, telefonoParameter);
+        }
     }
 }

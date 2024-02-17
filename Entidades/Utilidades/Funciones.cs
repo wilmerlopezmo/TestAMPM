@@ -7,10 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using SIGE.Entidades.Utilidades;
 
 
-namespace SIGE.Entidades.Utilidades
+namespace Entidades.Utilidades
 {
     public static class Funciones
     {

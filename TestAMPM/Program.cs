@@ -1,4 +1,4 @@
-﻿using SIGE.Entidades.Utilidades;
+﻿using Entidades.Utilidades;
 using System;
 using System.Collections.Generic;
 using System.Linq;

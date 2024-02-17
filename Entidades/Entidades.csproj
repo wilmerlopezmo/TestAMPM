@@ -38,6 +38,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
@@ -51,6 +52,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Conexion\Conexion.cs" />
+    <Compile Include="GuardarProducto_Result.cs">
+      <DependentUpon>ModelAMPM.tt</DependentUpon>
+    </Compile>
     <Compile Include="ModelAMPM.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -73,6 +78,7 @@
       <DependentUpon>ModelAMPM.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TESTAMPMEntities.cs" />
     <Compile Include="Usuarios.cs">
       <DependentUpon>ModelAMPM.tt</DependentUpon>
     </Compile>
