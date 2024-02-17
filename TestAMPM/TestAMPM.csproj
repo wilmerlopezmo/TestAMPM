@@ -118,6 +118,9 @@
     <EmbeddedResource Include="FrmUsuario.resx">
       <DependentUpon>FrmUsuario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmUsuarioLitsa.resx">
+      <DependentUpon>frmUsuarioLitsa.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MDI.resx">
       <DependentUpon>MDI.cs</DependentUpon>
     </EmbeddedResource>
@@ -166,6 +169,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="descarga.ico" />
+    <None Include="Resources\Nuevo.png" />
+    <None Include="Resources\Editar.png" />
+    <None Include="Resources\Cerrar1.png" />
+    <None Include="Resources\descarga.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

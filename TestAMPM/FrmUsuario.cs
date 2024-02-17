@@ -3,6 +3,7 @@ using SIGE.Entidades.Conexion;
 using System.Data.Entity.Core.Objects;
 using Entidades.Utilidades;
 using System.Text.RegularExpressions;
+using System.Linq;
 
 namespace TestAMPM
 {
@@ -22,7 +23,25 @@ namespace TestAMPM
 
         private void FrmUsuario_Load(object sender, EventArgs e)
         {
+            try
+            {
+                if (IsNuevo == false)
+                {
+                    var us = db.Usuarios.Where(c => c.IdUsuario == IdUsuario).FirstOrDefault();
+                    txtUsuario.Text = us.NombreUsuario;
+                    txtPas.Text = Funciones.Deco(us.Contrasena);
+                    txtNombre.Text = us.Nombres;
+                    txtApellido.Text = us.Apellidos;
+                    txtCorreo.Text = us.Correo;
+                    txtTelefono.Text = us.Telefono;
 
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -108,6 +127,12 @@ namespace TestAMPM
                     FrmLogin frm = (FrmLogin)this.Owner;
                     frm.VerificarUsuarios();
                 }
+
+                if (Primero == false)
+                {
+                    frmUsuarioLitsa frm = (frmUsuarioLitsa)this.Owner;
+                    frm.CargarUsuarios();
+                }
             }
             catch (Exception ex)
             {
@@ -142,6 +167,11 @@ namespace TestAMPM
         private void FrmUsuario_Shown(object sender, EventArgs e)
         {
             txtUsuario.Focus();
+        }
+
+        private void ckPassVer_CheckedChanged(object sender, EventArgs e)
+        {
+            this.txtPas.Properties.UseSystemPasswordChar = !ckPassVer.Checked;
         }
     }
 }
