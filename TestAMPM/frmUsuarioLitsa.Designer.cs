@@ -107,11 +107,17 @@
             // gridUsuarios
             // 
             this.gridUsuarios.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridUsuarios.EmbeddedNavigator.Buttons.Append.Visible = false;
+            this.gridUsuarios.EmbeddedNavigator.Buttons.CancelEdit.Visible = false;
+            this.gridUsuarios.EmbeddedNavigator.Buttons.Edit.Visible = false;
+            this.gridUsuarios.EmbeddedNavigator.Buttons.EndEdit.Visible = false;
+            this.gridUsuarios.EmbeddedNavigator.Buttons.Remove.Visible = false;
             this.gridUsuarios.Location = new System.Drawing.Point(2, 2);
             this.gridUsuarios.MainView = this.gvUsuarios;
             this.gridUsuarios.Name = "gridUsuarios";
             this.gridUsuarios.Size = new System.Drawing.Size(711, 215);
             this.gridUsuarios.TabIndex = 0;
+            this.gridUsuarios.UseEmbeddedNavigator = true;
             this.gridUsuarios.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvUsuarios});
             // 

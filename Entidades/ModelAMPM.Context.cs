@@ -84,5 +84,22 @@ namespace Entidades
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("GuardarProducto", idProducto, codigoProductoParameter, nombreProductoParameter, existenciaParameter, nombreProveedorParameter, imagenParameter);
         }
+    
+        public virtual int GuardarOpciones(Nullable<int> idProducto, string nombre, Nullable<bool> estado)
+        {
+            var idProductoParameter = idProducto.HasValue ?
+                new ObjectParameter("IdProducto", idProducto) :
+                new ObjectParameter("IdProducto", typeof(int));
+    
+            var nombreParameter = nombre != null ?
+                new ObjectParameter("Nombre", nombre) :
+                new ObjectParameter("Nombre", typeof(string));
+    
+            var estadoParameter = estado.HasValue ?
+                new ObjectParameter("Estado", estado) :
+                new ObjectParameter("Estado", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("GuardarOpciones", idProductoParameter, nombreParameter, estadoParameter);
+        }
     }
 }

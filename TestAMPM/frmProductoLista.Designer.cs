@@ -28,17 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.btnInactivar = new DevExpress.XtraEditors.SimpleButton();
             this.btnCerrar = new DevExpress.XtraEditors.SimpleButton();
             this.btnEditar = new DevExpress.XtraEditors.SimpleButton();
-            this.btnNuevo = new DevExpress.XtraEditors.SimpleButton();
             this.btnActivar = new DevExpress.XtraEditors.SimpleButton();
+            this.btnNuevo = new DevExpress.XtraEditors.SimpleButton();
             this.gridProducto = new DevExpress.XtraGrid.GridControl();
             this.gvProducto = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.ColFoto = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -130,17 +130,6 @@
             this.btnEditar.Text = "&Editar";
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
-            // btnNuevo
-            // 
-            this.btnNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnNuevo.ImageOptions.Image = global::TestAMPM.Properties.Resources.Nuevo;
-            this.btnNuevo.Location = new System.Drawing.Point(5, 11);
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(75, 28);
-            this.btnNuevo.TabIndex = 3;
-            this.btnNuevo.Text = "&Nuevo";
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
-            // 
             // btnActivar
             // 
             this.btnActivar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -153,8 +142,24 @@
             this.btnActivar.Visible = false;
             this.btnActivar.Click += new System.EventHandler(this.btnActivar_Click);
             // 
+            // btnNuevo
+            // 
+            this.btnNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnNuevo.ImageOptions.Image = global::TestAMPM.Properties.Resources.Nuevo;
+            this.btnNuevo.Location = new System.Drawing.Point(5, 11);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(75, 28);
+            this.btnNuevo.TabIndex = 3;
+            this.btnNuevo.Text = "&Nuevo";
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            // 
             // gridProducto
             // 
+            this.gridProducto.EmbeddedNavigator.Buttons.Append.Visible = false;
+            this.gridProducto.EmbeddedNavigator.Buttons.CancelEdit.Visible = false;
+            this.gridProducto.EmbeddedNavigator.Buttons.Edit.Visible = false;
+            this.gridProducto.EmbeddedNavigator.Buttons.EndEdit.Visible = false;
+            this.gridProducto.EmbeddedNavigator.Buttons.Remove.Visible = false;
             this.gridProducto.Location = new System.Drawing.Point(12, 62);
             this.gridProducto.MainView = this.gvProducto;
             this.gridProducto.Name = "gridProducto";
@@ -163,6 +168,7 @@
             this.btnOpciones});
             this.gridProducto.Size = new System.Drawing.Size(653, 158);
             this.gridProducto.TabIndex = 0;
+            this.gridProducto.UseEmbeddedNavigator = true;
             this.gridProducto.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvProducto});
             this.gridProducto.Click += new System.EventHandler(this.gridControl1_Click);
@@ -196,9 +202,9 @@
             // btnver
             // 
             this.btnver.AutoHeight = false;
-            editorButtonImageOptions3.Image = global::TestAMPM.Properties.Resources.Cerrar;
+            editorButtonImageOptions2.Image = global::TestAMPM.Properties.Resources.Cerrar;
             this.btnver.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Search, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Search, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnver.ContextImageOptions.Image = global::TestAMPM.Properties.Resources.Guardar;
             this.btnver.Name = "btnver";
             this.btnver.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
@@ -219,6 +225,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.btnOpciones.Name = "btnOpciones";
             this.btnOpciones.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btnOpciones.Click += new System.EventHandler(this.btnOpciones_Click);
             // 
             // colCodigo
             // 

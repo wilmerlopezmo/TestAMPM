@@ -252,5 +252,26 @@ namespace TestAMPM
                 Funciones.MensajeError(Funciones.GetMessageExceptions(ex));
             }
         }
+
+        private void btnOpciones_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int drow = gvProducto.FocusedRowHandle;
+
+                int idproducto = Convert.ToInt32(this.gvProducto.GetRowCellValue(drow, "IdProducto"));
+                
+                frmOpcionesProducto OP = new frmOpcionesProducto();
+                OP.Owner = this;
+                OP.Text = "Opciones del Producto : " + (this.gvProducto.GetRowCellValue(drow, "CodigoProducto").ToString() + " - " + this.gvProducto.GetRowCellValue(drow, "NombreProducto").ToString());
+                OP.ShowInTaskbar = false;
+                OP.IdProducto = idproducto;
+                OP.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                Funciones.MensajeError(Funciones.GetMessageExceptions(ex));
+            }
+        }
     }
 }

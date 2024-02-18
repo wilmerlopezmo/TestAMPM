@@ -52,6 +52,11 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="GuardarOpciones" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdProducto" Type="int" Mode="In" />
+          <Parameter Name="Nombre" Type="varchar" Mode="In" />
+          <Parameter Name="Estado" Type="bit" Mode="In" />
+        </Function>
         <Function Name="GuardarProducto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="IdProducto" Type="int" Mode="InOut" />
           <Parameter Name="CodigoProducto" Type="varchar" Mode="In" />
@@ -156,6 +161,11 @@
             <Parameter Name="NombreProveedor" Mode="In" Type="String" />
             <Parameter Name="Imagen" Mode="In" Type="Binary" />
           </FunctionImport>
+          <FunctionImport Name="GuardarOpciones">
+            <Parameter Name="IdProducto" Mode="In" Type="Int32" />
+            <Parameter Name="Nombre" Mode="In" Type="String" />
+            <Parameter Name="Estado" Mode="In" Type="Boolean" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="GuardarProducto_Result">
           <Property Type="Int32" Name="IdProducto" Nullable="false" />
@@ -213,6 +223,7 @@
           </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="GuardarUsuario" FunctionName="TESTAMPMModel.Store.GuardarUsuario" />
           <FunctionImportMapping FunctionImportName="GuardarProducto" FunctionName="TESTAMPMModel.Store.GuardarProducto" />
+          <FunctionImportMapping FunctionImportName="GuardarOpciones" FunctionName="TESTAMPMModel.Store.GuardarOpciones" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
