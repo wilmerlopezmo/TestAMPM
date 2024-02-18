@@ -77,6 +77,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProducto.Designer.cs">
+      <DependentUpon>frmProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVerFoto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVerFoto.Designer.cs">
+      <DependentUpon>frmVerFoto.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +121,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmProducto.resx">
+      <DependentUpon>frmProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVerFoto.resx">
+      <DependentUpon>frmVerFoto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -169,6 +187,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="descarga.ico" />
+    <None Include="Resources\Buscar1.png" />
+    <None Include="Resources\Aplicar_24x24.png" />
+    <None Include="Resources\Anular.png" />
     <None Include="Resources\Nuevo.png" />
     <None Include="Resources\Editar.png" />
     <None Include="Resources\Cerrar1.png" />

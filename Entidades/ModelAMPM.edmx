@@ -139,14 +139,6 @@
             <End Role="Productos" EntitySet="Productos" />
             <End Role="OpcionesProducto" EntitySet="OpcionesProducto" />
           </AssociationSet>
-          <FunctionImport Name="GuardarProducto" ReturnType="Collection(TESTAMPMModel.GuardarProducto_Result)">
-            <Parameter Name="IdProducto" Mode="InOut" Type="Int32" />
-            <Parameter Name="CodigoProducto" Mode="In" Type="String" />
-            <Parameter Name="NombreProducto" Mode="In" Type="String" />
-            <Parameter Name="Existencia" Mode="In" Type="Decimal" />
-            <Parameter Name="NombreProveedor" Mode="In" Type="String" />
-            <Parameter Name="Imagen" Mode="In" Type="Binary" />
-          </FunctionImport>
           <FunctionImport Name="GuardarUsuario">
             <Parameter Name="Id" Mode="InOut" Type="Int32" />
             <Parameter Name="NombreUsuario" Mode="In" Type="String" />
@@ -155,6 +147,14 @@
             <Parameter Name="Apellidos" Mode="In" Type="String" />
             <Parameter Name="Correo" Mode="In" Type="String" />
             <Parameter Name="Telefono" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GuardarProducto">
+            <Parameter Name="IdProducto" Mode="InOut" Type="Int32" />
+            <Parameter Name="CodigoProducto" Mode="In" Type="String" />
+            <Parameter Name="NombreProducto" Mode="In" Type="String" />
+            <Parameter Name="Existencia" Mode="In" Type="Decimal" />
+            <Parameter Name="NombreProveedor" Mode="In" Type="String" />
+            <Parameter Name="Imagen" Mode="In" Type="Binary" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="GuardarProducto_Result">
@@ -211,21 +211,8 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="GuardarProducto" FunctionName="TESTAMPMModel.Store.GuardarProducto">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="TESTAMPMModel.GuardarProducto_Result">
-                <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
-                <ScalarProperty Name="CodigoProducto" ColumnName="CodigoProducto" />
-                <ScalarProperty Name="NombreProducto" ColumnName="NombreProducto" />
-                <ScalarProperty Name="Existencia" ColumnName="Existencia" />
-                <ScalarProperty Name="Estado" ColumnName="Estado" />
-                <ScalarProperty Name="NombreProveedor" ColumnName="NombreProveedor" />
-                <ScalarProperty Name="Imagen" ColumnName="Imagen" />
-                <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="GuardarUsuario" FunctionName="TESTAMPMModel.Store.GuardarUsuario" />
+          <FunctionImportMapping FunctionImportName="GuardarProducto" FunctionName="TESTAMPMModel.Store.GuardarProducto" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

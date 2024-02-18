@@ -77,14 +77,14 @@ namespace TestAMPM
                 {
                     if (UsrDatos.Count == 0)
                     {
-                        MessageBox.Show("El USUARIO NO EXISTE, FAVOR VERIFIQUE.", "Test AM / PM", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("USUARIO O CONTRASEÑA INCORRECTA, FAVOR VERIFIQUE.", "Test AM / PM", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
 
                 }
                 else
                 {
-                    MessageBox.Show("El USUARIO NO EXISTE, FAVOR VERIFIQUE.", "Test AM / PM", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("USUARIO O CONTRASEÑA INCORRECTA, FAVOR VERIFIQUE.", "Test AM / PM", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 

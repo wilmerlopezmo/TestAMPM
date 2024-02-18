@@ -106,7 +106,7 @@ namespace TestAMPM
                     return;
                 }
 
-                ObjectParameter idOutput = new ObjectParameter("Id", typeof(string));
+                ObjectParameter idOutput = new ObjectParameter("Id", typeof(int));
                 var Pass = Funciones.Deco(txtPas.Text);
                 if (IsNuevo)
                 {

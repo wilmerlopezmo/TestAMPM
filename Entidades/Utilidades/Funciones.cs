@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,7 +14,37 @@ namespace Entidades.Utilidades
 {
     public static class Funciones
     {
-        
+        public static byte[] ImageToBytes(System.Drawing.Image img)
+        {
+            string sTemp = System.IO.Path.GetTempFileName();
+            System.IO.FileStream fs = new FileStream(sTemp, System.IO.FileMode.OpenOrCreate, System.IO.FileAccess.ReadWrite);
+            img.Save(fs, System.Drawing.Imaging.ImageFormat.Png);
+            fs.Position = 0;
+            //
+            int imgLength = Convert.ToInt32(fs.Length);
+            byte[] bytes = new byte[imgLength];
+            fs.Read(bytes, 0, imgLength);
+            fs.Close();
+            return bytes;
+        }
+
+        public static System.Drawing.Image BytesToImage(byte[] bytes)
+        {
+            if (bytes == null) return null;
+
+            System.IO.MemoryStream ms = new System.IO.MemoryStream(bytes);
+            System.Drawing.Bitmap bm = null;
+            try
+            {
+                bm = new System.Drawing.Bitmap(ms);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return bm;
+        }
+
         public static string Deco(string PassWord)
         {
             string Deco = "", s = "", sChar = "";
